@@ -7,10 +7,10 @@
     "dev": "vite",
     "scan": "node a11y.ts",
     "manifest": "node --experimental-strip-types generate-manifest.ts",
+    "update": "npm run scan && npm run manifest",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "update-results": "./scripts/update-results.sh"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
