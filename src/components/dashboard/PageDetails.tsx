@@ -27,6 +27,7 @@ import {
   List,
   Layers,
 } from 'lucide-react';
+import { HtmlViewerButton } from './HtmlViewer';
 import { LEVEL_LABELS, LEVEL_COLORS, type AccessibilityResult, type LevelType } from '@/types/accessibility';
 import { cn } from '@/lib/utils';
 
@@ -169,6 +170,9 @@ export function PageDetails() {
               </Button>
             )}
           </div>
+          
+          {/* HTML Viewer Button */}
+          <HtmlViewerButton pageLabel={selectedPage.label} />
         </div>
 
         {/* Stats Bar - only show in list mode */}

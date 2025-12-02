@@ -4,4 +4,5 @@ export { Overview } from './Overview';
 export { PageDetails } from './PageDetails';
 export { Sidebar } from './Sidebar';
 export { ScreenshotViewer } from './ScreenshotViewer';
+export { HtmlViewer, HtmlViewerButton } from './HtmlViewer';
 
