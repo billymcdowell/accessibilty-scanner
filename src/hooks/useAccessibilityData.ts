@@ -1,7 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
 import type { ScanSummary, PageData, AccessibilityResult } from '@/types/accessibility';
 
-const RESULTS_BASE_URL = '/results';
+// Use Vite's base URL to support GitHub Pages deployment
+const BASE_URL = import.meta.env.BASE_URL || '/';
+const RESULTS_BASE_URL = `${BASE_URL}results`.replace('//', '/');
 
 export interface DayFolder {
   name: string; // Unique identifier: folder + summary file
