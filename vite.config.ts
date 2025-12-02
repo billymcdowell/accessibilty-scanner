@@ -6,6 +6,8 @@ import { configApiPlugin } from './vite-plugin-config-api'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Set base path for GitHub Pages deployment
+  base: process.env.GITHUB_ACTIONS ? '/accessibilty-scanner/' : '/',
   plugins: [react(), tailwindcss(), configApiPlugin()],
   resolve: {
     alias: {
