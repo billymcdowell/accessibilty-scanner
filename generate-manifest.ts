@@ -6,6 +6,7 @@ interface ManifestEntry {
   summary: string;
   timestamp: string;
   pageCount: number;
+  projects: string[];
 }
 
 interface ScanSummary {
@@ -112,8 +113,9 @@ function generateManifest(): void {
 
     // Add entries for each summary file (most recent first)
     for (const summary of sortedSummaries) {
-      // Read summary to get page count
+      // Read summary to get page count and project names
       let pageCount = 0;
+      let projects: string[] = [];
       try {
         const summaryContent = fs.readFileSync(
           path.join(folderPath, summary.file),
@@ -121,6 +123,17 @@ function generateManifest(): void {
         );
         const summaryData: ScanSummary = JSON.parse(summaryContent);
         pageCount = summaryData.pageScanSummary?.length || 0;
+        
+        // Extract unique project names (domains) from page labels
+        const projectSet = new Set<string>();
+        for (const page of summaryData.pageScanSummary || []) {
+          // Label is like "react.dev/index" or "tailwindcss.com/docs/installation/using-vite"
+          const domain = page.label.split('/')[0];
+          if (domain) {
+            projectSet.add(domain);
+          }
+        }
+        projects = Array.from(projectSet);
       } catch {
         // Ignore read errors
       }
@@ -130,6 +143,7 @@ function generateManifest(): void {
         summary: summary.file,
         timestamp: summary.timestamp!.toISOString(),
         pageCount,
+        projects,
       });
     }
   }
@@ -148,10 +162,11 @@ function generateManifest(): void {
   // Write manifest file
   const manifestPath = path.join(resultsPath, "manifest.json");
   
-  // Create a simplified manifest (folder + summary only for app compatibility)
-  const simpleManifest = entries.map(({ folder, summary }) => ({
+  // Create a simplified manifest (folder + summary + projects for app compatibility)
+  const simpleManifest = entries.map(({ folder, summary, projects }) => ({
     folder,
     summary,
+    projects,
   }));
 
   fs.writeFileSync(manifestPath, JSON.stringify(simpleManifest, null, 2));

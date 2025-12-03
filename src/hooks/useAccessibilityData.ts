@@ -11,11 +11,13 @@ export interface DayFolder {
   displayName: string;
   date: Date;
   summaryFile: string;
+  projects: string[];
 }
 
 interface ManifestEntry {
   folder: string;
   summary: string;
+  projects?: string[];
 }
 
 // Parse timestamp from summary filename like "summary_2025-12-02T17-51-10.242Z.json"
@@ -71,14 +73,16 @@ export function useAvailableDays() {
                 if (date) {
                   // Use summary file as part of unique identifier
                   const uniqueName = `${entry.folder}::${entry.summary}`;
+                  const projects = entry.projects || [];
                   foundDays.push({
                     name: uniqueName,
                     folder: entry.folder,
-                    displayName: summaryDate 
+                    displayName: `${summaryDate 
                       ? formatDisplayDateWithTime(summaryDate) 
-                      : formatDisplayDate(date),
+                      : formatDisplayDate(date)}`,
                     date,
                     summaryFile: entry.summary,
+                    projects,
                   });
                 }
               } else if (typeof entry === 'string') {
@@ -91,6 +95,7 @@ export function useAvailableDays() {
                     displayName: formatDisplayDate(date),
                     date,
                     summaryFile: '', // Will need to be discovered
+                    projects: [],
                   });
                 }
               }
@@ -115,6 +120,7 @@ export function useAvailableDays() {
               displayName: formatDisplayDate(today),
               date: today,
               summaryFile: '', // Will need to be discovered
+              projects: [],
             });
           }
         } catch {

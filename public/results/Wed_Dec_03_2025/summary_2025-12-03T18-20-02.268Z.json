@@ -1,0 +1,80 @@
+{
+    "counts": {
+        "ignored": 0,
+        "violation": 283,
+        "recommendation": 6,
+        "pass": 20436,
+        "potentialviolation": 131,
+        "potentialrecommendation": 80,
+        "manual": 68,
+        "elements": 3867,
+        "elementsViolation": 277,
+        "elementsViolationReview": 402
+    },
+    "startReport": 1764786002268,
+    "endReport": 1764786020506,
+    "toolID": "accessibility-checker-v4.0.9",
+    "policies": [
+        "IBM_Accessibility"
+    ],
+    "reportLevels": [
+        "violation",
+        "potentialviolation",
+        "recommendation",
+        "potentialrecommendation",
+        "manual",
+        "pass"
+    ],
+    "failLevels": [
+        "violation",
+        "potentialviolation"
+    ],
+    "scanID": "61470ce5-4572-4806-a760-76c69e26aa2f",
+    "pageScanSummary": [
+        {
+            "label": "tailwindcss.com/index",
+            "counts": {
+                "ignored": 0,
+                "elements": 2097,
+                "elementsViolation": 100,
+                "elementsViolationReview": 152,
+                "violation": 104,
+                "potentialviolation": 55,
+                "recommendation": 2,
+                "potentialrecommendation": 31,
+                "manual": 18,
+                "pass": 10720
+            }
+        },
+        {
+            "label": "tailwindcss.com/docs/installation/using-vite",
+            "counts": {
+                "ignored": 0,
+                "elements": 986,
+                "elementsViolation": 62,
+                "elementsViolationReview": 75,
+                "violation": 63,
+                "potentialviolation": 14,
+                "recommendation": 2,
+                "potentialrecommendation": 0,
+                "manual": 1,
+                "pass": 5774
+            }
+        },
+        {
+            "label": "tailwindcss.com/showcase",
+            "counts": {
+                "ignored": 0,
+                "elements": 784,
+                "elementsViolation": 115,
+                "elementsViolationReview": 175,
+                "violation": 116,
+                "potentialviolation": 62,
+                "recommendation": 2,
+                "potentialrecommendation": 49,
+                "manual": 49,
+                "pass": 3942
+            }
+        }
+    ]
+}

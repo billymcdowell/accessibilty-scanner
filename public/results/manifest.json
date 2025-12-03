@@ -1,10 +1,44 @@
 [
   {
-    "folder": "Tue_Dec_02_2025",
-    "summary": "summary_2025-12-02T19-21-33.189Z.json"
+    "folder": "Wed_Dec_03_2025",
+    "summary": "summary_2025-12-03T18-20-25.766Z.json",
+    "projects": [
+      "react.dev"
+    ]
+  },
+  {
+    "folder": "Wed_Dec_03_2025",
+    "summary": "summary_2025-12-03T18-20-02.268Z.json",
+    "projects": [
+      "tailwindcss.com"
+    ]
+  },
+  {
+    "folder": "Wed_Dec_03_2025",
+    "summary": "summary_2025-12-03T18-10-57.476Z.json",
+    "projects": [
+      "react.dev"
+    ]
+  },
+  {
+    "folder": "Wed_Dec_03_2025",
+    "summary": "summary_2025-12-03T18-10-34.129Z.json",
+    "projects": [
+      "tailwindcss.com"
+    ]
   },
   {
     "folder": "Tue_Dec_02_2025",
-    "summary": "summary_2025-12-02T19-21-12.083Z.json"
+    "summary": "summary_2025-12-02T19-21-33.189Z.json",
+    "projects": [
+      "react.dev"
+    ]
+  },
+  {
+    "folder": "Tue_Dec_02_2025",
+    "summary": "summary_2025-12-02T19-21-12.083Z.json",
+    "projects": [
+      "tailwindcss.com"
+    ]
   }
 ]

@@ -1,0 +1,65 @@
+{
+    "counts": {
+        "ignored": 0,
+        "violation": 105,
+        "recommendation": 11,
+        "pass": 15782,
+        "potentialviolation": 334,
+        "potentialrecommendation": 69,
+        "manual": 16,
+        "elements": 3905,
+        "elementsViolation": 103,
+        "elementsViolationReview": 350
+    },
+    "startReport": 1764785457476,
+    "endReport": 1764785470379,
+    "toolID": "accessibility-checker-v4.0.9",
+    "policies": [
+        "IBM_Accessibility"
+    ],
+    "reportLevels": [
+        "violation",
+        "potentialviolation",
+        "recommendation",
+        "potentialrecommendation",
+        "manual",
+        "pass"
+    ],
+    "failLevels": [
+        "violation",
+        "potentialviolation"
+    ],
+    "scanID": "6e6c79cc-ac10-4aa3-a23b-859fa47b8861",
+    "pageScanSummary": [
+        {
+            "label": "react.dev/index",
+            "counts": {
+                "ignored": 0,
+                "elements": 1777,
+                "elementsViolation": 32,
+                "elementsViolationReview": 158,
+                "violation": 34,
+                "potentialviolation": 155,
+                "recommendation": 2,
+                "potentialrecommendation": 44,
+                "manual": 15,
+                "pass": 7561
+            }
+        },
+        {
+            "label": "react.dev/learn",
+            "counts": {
+                "ignored": 0,
+                "elements": 2128,
+                "elementsViolation": 71,
+                "elementsViolationReview": 192,
+                "violation": 71,
+                "potentialviolation": 179,
+                "recommendation": 9,
+                "potentialrecommendation": 25,
+                "manual": 1,
+                "pass": 8221
+            }
+        }
+    ]
+}

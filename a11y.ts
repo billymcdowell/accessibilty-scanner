@@ -8,6 +8,17 @@ const outputFolder = `public/results/${new Date()
   .replaceAll(" ", "_")}/`;
 
 const config = {
+  ruleArchive: "latest",
+  policies: ["IBM_Accessibility"],
+  failLevels: ["violation", "potentialviolation"],
+  reportLevels: [
+      "violation",
+      "potentialviolation",
+      "recommendation",
+      "potentialrecommendation",
+      "manual",
+      "pass",
+  ],
   outputFormat: ["json", "html"],
   outputFolder: outputFolder,
 };

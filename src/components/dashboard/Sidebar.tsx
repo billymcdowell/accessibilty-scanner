@@ -69,12 +69,32 @@ export function Sidebar() {
           disabled={daysLoading}
         >
           <SelectTrigger className="w-full bg-sidebar-accent/50">
-            <SelectValue placeholder={daysLoading ? "Loading..." : "Select a day"} />
+            <SelectValue placeholder={daysLoading ? "Loading..." : "Select a day"}>
+              {(() => {
+                const selected = availableDays.find(d => d.name === selectedDay);
+                if (!selected) return null;
+                return (
+                  <div className="flex flex-col items-start text-left">
+                    {selected.projects && selected.projects.length > 0 && (
+                      <span className="text-xs text-muted-foreground">
+                        {selected.projects.join(', ')}
+                      </span>
+                    )}
+                    <span className="font-medium">{selected.displayName}</span>
+                  </div>
+                );
+              })()}
+            </SelectValue>
           </SelectTrigger>
           <SelectContent>
             {availableDays.map((day) => (
               <SelectItem key={day.name} value={day.name}>
                 <div className="flex flex-col">
+                  {day.projects && day.projects.length > 0 && (
+                    <span className="text-xs text-muted-foreground">
+                      {day.projects.join(', ')}
+                    </span>
+                  )}
                   <span className="font-medium">{day.displayName}</span>
                 </div>
               </SelectItem>
